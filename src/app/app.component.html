@@ -1,0 +1,30 @@
+<mat-toolbar color="primary" class="text-center">
+  <mat-toolbar-row>
+    <span>MEMORY GAME</span>
+    <span class="spacer"></span>
+    <mat-label>Pairs:</mat-label>
+    <mat-select [(ngModel)]="selectedCardPairs" style="width:3rem;background: white;color:black;">
+      <mat-option *ngFor="let option of options" [value]="option.value">
+        {{option.viewValue}}
+      </mat-option>
+    </mat-select>
+    <button mat-raised-button color="warn" (click)="newGameButtonPressed()">New game</button>
+    <span class="spacer"></span>
+
+  </mat-toolbar-row>
+</mat-toolbar>
+<div class="p-16">
+  <div>
+    <p class="text-center">Tap on a card to flip it. You can only flip a maximum of two cards at a time. A match will
+      remove
+      those cards!</p>
+    <div>
+      <p class="alignleft">Current tries: {{stepCount}}</p>
+      <p class="alignright"><button mat-button (click)="restartButtonPressed()">Restart</button></p>
+    </div>
+  </div>
+  <div class="grid p-16" style="clear: both;">
+    <app-game-card *ngFor="let c of cards; let idx=index" [data]="c" (cardClicked)="cardClicked(idx)">
+    </app-game-card>
+  </div>
+</div>

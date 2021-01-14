@@ -1,0 +1,56 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(8, 200px);
+  gap: 1rem;
+
+  justify-content: center;
+}
+
+.on-the-right {
+  padding: 0 14px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.svgimg {
+  width: 2rem;
+  height: 2rem;
+  padding: 1rem;
+}
+
+.alignleft {
+  float: left;
+}
+.alignright {
+  float: right;
+}
+
+.mat-toolbar {
+  background: #000;
+}
+
+@media (max-width: 1800px) {
+  .grid {
+    grid-template-columns: repeat(6, 200px);
+  }
+}
+
+@media (max-width: 1350px) {
+  .grid {
+    grid-template-columns: repeat(4, 200px);
+  }
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 200px);
+  }
+}
+
+@media (max-width: 400px) {
+  .grid {
+    grid-template-columns: repeat(1, 200px);
+  }
+}
